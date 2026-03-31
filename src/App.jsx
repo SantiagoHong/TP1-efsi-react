@@ -1,16 +1,16 @@
-import { Form } from "./componentes/Form.jsx";
-import Listado from "./componentes/Listado.jsx";
-function App() {
+import Form  from "./components/Form.jsx";
+import Listado from "./components/Listado.jsx";
 
+function App() {
   return (
     <>
       <h1>ADMINISTRADOR DE PACIENTES</h1>
-      <div class="container">
-        <div class="row">
-          <div class="one-half column">
+      <div className="container">
+        <div className="row">
+          <div className="one-half column">
             <Form />
           </div>
-          <div class="one-half column">
+          <div className="one-half column">
             <Listado />
           </div>
         </div>
