@@ -1,7 +1,28 @@
-function Form() {
+import "../styles/form.css"
+
+function Form( {setCitas} ) {
+
+    function handleSubmit(e){
+        e.preventDefault()
+        const mascota = e.target.mascota.value
+        const dueno = e.target.propietario.value
+        const fecha = e.target.fecha.value
+        const hora = e.target.hora.value
+        const sintomas = e.target.sintomas.value
+
+        const nuevaCita = {
+            mascota,
+            dueno,
+            fecha,
+            hora,
+            sintomas
+        }
+
+        setCitas(prev => [...prev, nuevaCita])
+    }
 
     return (
-        <form>
+        <form onSubmit = {(e) => handleSubmit(e)}>
             <h2>Crear mi Cita</h2>
 
             <label>Nombre Mascota</label>

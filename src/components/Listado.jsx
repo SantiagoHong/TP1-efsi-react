@@ -1,12 +1,12 @@
 import Cita from "./Cita.jsx"
-
-function Listado({listado}) {
+import "../styles/listado.css"
+function Listado( {citas, setCitas} ) {
     return (
         <section>
             <h2>Administra tus citas</h2>
             <section> 
-                {listado.map(obj=>(
-                    <Cita cita={obj}/>
+                {citas.map((obj, index)=>(
+                    <Cita cita={obj} id={index} setCitas={setCitas} key={index} />
                 ))}
             </section>
         </section>

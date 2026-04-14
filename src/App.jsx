@@ -1,13 +1,10 @@
-import Form  from "./components/Form.jsx";
-import Listado from "./components/Listado.jsx";
+import Form  from "./components/Form.jsx"
+import Listado from "./components/Listado.jsx"
+import { useState } from 'react'
+import '../styles/app.css'
 
 function App() {
-
-  const list = [
-    {mascota: "Nina", dueno: "Martín", fecha: "2021-08-05", hora: "08:20", sintomas: "Le duele la pierna"},
-    {mascota: "Sifon", dueno: "Flecha", fecha: "2023-08-05", hora: "09:24", sintomas: "Duerme mucho"},
-    {mascota: "Floki", dueno: "Ari", fecha: "2023-08-05", hora: "16:15", sintomas: "No está comiendo"}
-  ]
+  const [citas, setCitas] = useState([])
 
   return (
     <>
@@ -15,10 +12,10 @@ function App() {
       <div className="container">
         <div className="row">
           <div className="one-half column">
-            <Form />
+            <Form setCitas = {setCitas} />
           </div>
           <div className="one-half column">
-            <Listado listado={list} />
+            <Listado citas = {citas} setCitas = {setCitas}/>
           </div>
         </div>
       </div>
