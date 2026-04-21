@@ -19,6 +19,7 @@ function Form( {setCitas} ) {
         }
 
         setCitas(prev => [...prev, nuevaCita])
+        
     }
 
     return (
